@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["../findCommonItems.ts"],
+  "sourcesContent": ["// Given 2 arrays, create a function that let's a user know (true/false) whether these two arrays contain any common items\n// For example:\n// const array1 = ['a', 'b', 'c', 'x']\n// const array2 = ['z', 'y', 'i']\n// should return false\n\n// confirm the size of arrays\n// ask the data type in arrays\n// ask if both arrays will always be sent\n// consider modularising code\n// look for alternative answers\n\nfunction checkForCommon(arr1: string[], arr2: string[]): boolean {\n  const obj1 = {}\n  arr1.forEach(item => {\n    if (!obj1[item]) {\n      obj1[item] = true\n    }\n  })\n  for (let i of arr2) {\n    if (obj1[i]) {\n      return true\n    }\n  }\n  return false\n}\n\n// console.log(checkForCommon(['a', 'b', 'c', 'x'], ['z', 'y', 'x']))\nfunction containsCommonItems(arr1: string[], arr2: []) {\n  return arr1.some(item => arr2.includes(item))\n}"],
+  "mappings": ";AAYA,SAAS,eAAe,MAAgB,MAAyB;AAC/D,QAAM,OAAO,CAAC;AACd,OAAK,QAAQ,UAAQ;AACnB,QAAI,CAAC,KAAK,OAAO;AACf,WAAK,QAAQ;AAAA,IACf;AAAA,EACF,CAAC;AACD,WAAS,KAAK,MAAM;AAClB,QAAI,KAAK,IAAI;AACX,aAAO;AAAA,IACT;AAAA,EACF;AACA,SAAO;AACT;AAGA,SAAS,oBAAoB,MAAgB,MAAU;AACrD,SAAO,KAAK,KAAK,UAAQ,KAAK,SAAS,IAAI,CAAC;AAC9C;",
+  "names": []
+}

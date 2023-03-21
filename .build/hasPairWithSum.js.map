@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["../hasPairWithSum.ts"],
+  "sourcesContent": ["// Given two arrays of numbers and a sum value, return true if any two numbers in the array sum up to the given some value, and return false otherwise\n// Hint - check how sets work\n\nfunction hasPairWithSum1(arr: number[], sum: number) {\n  for (let i = 0; i < arr.length - 1; i++) {\n    for (let j = i + 1; j < arr.length; j++) {\n      if (arr[i] + arr[j] === sum) {\n        return true\n      }\n    }\n  }\n  return false\n}\n// console.log(hasPairWithSum1([1,3,5,5,7], 11))\n\nfunction hasPairWithSum2(arr: number[], sum: number) {\n  const mySet = new Set()\n  for (let num of arr) {\n    if (mySet.has(num)) return true\n    mySet.add(sum - num)\n  }\n  return false;\n}"],
+  "mappings": ";AAGA,SAAS,gBAAgB,KAAe,KAAa;AACnD,WAAS,IAAI,GAAG,IAAI,IAAI,SAAS,GAAG,KAAK;AACvC,aAAS,IAAI,IAAI,GAAG,IAAI,IAAI,QAAQ,KAAK;AACvC,UAAI,IAAI,KAAK,IAAI,OAAO,KAAK;AAC3B,eAAO;AAAA,MACT;AAAA,IACF;AAAA,EACF;AACA,SAAO;AACT;AAGA,SAAS,gBAAgB,KAAe,KAAa;AACnD,QAAM,QAAQ,oBAAI,IAAI;AACtB,WAAS,OAAO,KAAK;AACnB,QAAI,MAAM,IAAI,GAAG;AAAG,aAAO;AAC3B,UAAM,IAAI,MAAM,GAAG;AAAA,EACrB;AACA,SAAO;AACT;",
+  "names": []
+}

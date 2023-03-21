@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["../implementArray.ts"],
+  "sourcesContent": ["class MyArray {\n  constructor() {\n    this.length = 0;\n    this.data = {}\n  }\n\n  get(index) {\n    return this.data[index]\n  }\n\n  push(item) {\n    this.data[this.length] = item;\n    this.length++\n    return this.length\n  }\n\n  pop() {\n    const lastItem = this.data[this.length - 1];\n    delete this.data[this.length-1];\n    this.length--;\n    return lastItem;\n  }\n\n  delete(index) {\n    const item = this.data[index];\n    this.shiftItems(item)\n  }\n\n  shiftItems(index) {\n    for (let i = index; i < this.length - 1; i++) {\n      this.data[i] = this.data[i + 1];\n    }\n    delete this.data[this.length-1];\n    this.length--;\n  }\n}\n\nconst newArray = new MyArray()"],
+  "mappings": ";AAAA,MAAM,QAAQ;AAAA,EACZ,cAAc;AACZ,SAAK,SAAS;AACd,SAAK,OAAO,CAAC;AAAA,EACf;AAAA,EAEA,IAAI,OAAO;AACT,WAAO,KAAK,KAAK;AAAA,EACnB;AAAA,EAEA,KAAK,MAAM;AACT,SAAK,KAAK,KAAK,UAAU;AACzB,SAAK;AACL,WAAO,KAAK;AAAA,EACd;AAAA,EAEA,MAAM;AACJ,UAAM,WAAW,KAAK,KAAK,KAAK,SAAS;AACzC,WAAO,KAAK,KAAK,KAAK,SAAO;AAC7B,SAAK;AACL,WAAO;AAAA,EACT;AAAA,EAEA,OAAO,OAAO;AACZ,UAAM,OAAO,KAAK,KAAK;AACvB,SAAK,WAAW,IAAI;AAAA,EACtB;AAAA,EAEA,WAAW,OAAO;AAChB,aAAS,IAAI,OAAO,IAAI,KAAK,SAAS,GAAG,KAAK;AAC5C,WAAK,KAAK,KAAK,KAAK,KAAK,IAAI;AAAA,IAC/B;AACA,WAAO,KAAK,KAAK,KAAK,SAAO;AAC7B,SAAK;AAAA,EACP;AACF;AAEA,MAAM,WAAW,IAAI,QAAQ;",
+  "names": []
+}
