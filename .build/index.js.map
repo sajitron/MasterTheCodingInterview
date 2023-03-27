@@ -1,7 +1,7 @@
 {
   "version": 3,
   "sources": ["../index.ts"],
-  "sourcesContent": ["function reverse(word: string) {\n  return word.split('').reverse().join('')\n}\n\nconsole.log(reverse(\"paramaount\"))"],
-  "mappings": ";AAAA,SAAS,QAAQ,MAAc;AAC7B,SAAO,KAAK,MAAM,EAAE,EAAE,QAAQ,EAAE,KAAK,EAAE;AACzC;AAEA,QAAQ,IAAI,QAAQ,YAAY,CAAC;",
+  "sourcesContent": ["class Node {\n  constructor(value) {\n    this.value = value;\n    this.next = null;\n  }\n}\n\nclass LinkedList {\n  constructor(value) {\n    this.head = new Node(value);\n    this.tail = this.head;\n    this.length = 1;\n  }\n  append(value) {\n    let newNode = new Node(value);\n    this.tail.next = newNode;\n    this.tail = newNode\n    this.length++;\n    return this;\n  }\n  prepend(value) {\n    let newHead = new Node(value);\n    newHead.next = this.head;\n    this.head = newHead;\n    this.length++;\n    return this;\n  }\n}\n\nconst myLinkedList = new LinkedList(24)\nmyLinkedList.append(42)\nmyLinkedList.append(73)\nmyLinkedList.prepend(84)\nmyLinkedList.prepend(56)\n\nconsole.log(JSON.stringify(myLinkedList, null, 2))"],
+  "mappings": ";AAAA,MAAM,KAAK;AAAA,EACT,YAAY,OAAO;AACjB,SAAK,QAAQ;AACb,SAAK,OAAO;AAAA,EACd;AACF;AAEA,MAAM,WAAW;AAAA,EACf,YAAY,OAAO;AACjB,SAAK,OAAO,IAAI,KAAK,KAAK;AAC1B,SAAK,OAAO,KAAK;AACjB,SAAK,SAAS;AAAA,EAChB;AAAA,EACA,OAAO,OAAO;AACZ,QAAI,UAAU,IAAI,KAAK,KAAK;AAC5B,SAAK,KAAK,OAAO;AACjB,SAAK,OAAO;AACZ,SAAK;AACL,WAAO;AAAA,EACT;AAAA,EACA,QAAQ,OAAO;AACb,QAAI,UAAU,IAAI,KAAK,KAAK;AAC5B,YAAQ,OAAO,KAAK;AACpB,SAAK,OAAO;AACZ,SAAK;AACL,WAAO;AAAA,EACT;AACF;AAEA,MAAM,eAAe,IAAI,WAAW,EAAE;AACtC,aAAa,OAAO,EAAE;AACtB,aAAa,OAAO,EAAE;AACtB,aAAa,QAAQ,EAAE;AACvB,aAAa,QAAQ,EAAE;AAEvB,QAAQ,IAAI,KAAK,UAAU,cAAc,MAAM,CAAC,CAAC;",
   "names": []
 }

@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["../mergeSortedArrays.ts"],
+  "sourcesContent": ["function mergeSortedArrays(arr1: number[], arr2: number[]) {\n  return arr1.concat(arr2).sort((a, b) => a - b) \n}"],
+  "mappings": ";AAAA,SAAS,kBAAkB,MAAgB,MAAgB;AACzD,SAAO,KAAK,OAAO,IAAI,EAAE,KAAK,CAAC,GAAG,MAAM,IAAI,CAAC;AAC/C;",
+  "names": []
+}

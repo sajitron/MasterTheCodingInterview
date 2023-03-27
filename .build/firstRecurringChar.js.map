@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["../firstRecurringChar.ts"],
+  "sourcesContent": ["// Given an array = [2, 5, 1, 2, 3, 5, 1, 2, 4]\n// It should return 2\nfunction findFirstRecurring(arr: number[]): number {\n  let map = {}\n  for(let num of arr) {\n    if (map[num]) return num;\n    map[num] = true;\n  }\n}"],
+  "mappings": ";AAEA,SAAS,mBAAmB,KAAuB;AACjD,MAAI,MAAM,CAAC;AACX,WAAQ,OAAO,KAAK;AAClB,QAAI,IAAI;AAAM,aAAO;AACrB,QAAI,OAAO;AAAA,EACb;AACF;",
+  "names": []
+}
