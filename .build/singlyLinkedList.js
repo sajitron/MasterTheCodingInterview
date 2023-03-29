@@ -82,8 +82,7 @@ myLinkedList.insert(2, 45);
 console.log(JSON.stringify(myLinkedList, null, 2));
 console.log(myLinkedList.printList());
 myLinkedList.remove(6);
-myLinkedList.remove(0);
-myLinkedList.remove(0);
+myLinkedList.remove(1);
 console.log(JSON.stringify(myLinkedList, null, 2));
 console.log(myLinkedList.printList());
-//# sourceMappingURL=index.js.map
+//# sourceMappingURL=singlyLinkedList.js.map
