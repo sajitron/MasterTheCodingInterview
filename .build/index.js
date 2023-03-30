@@ -3,9 +3,10 @@ class Node {
   constructor(value) {
     this.value = value;
     this.next = null;
+    this.prev = null;
   }
 }
-class LinkedList {
+class DoublyLinkedList {
   constructor(value) {
     this.head = new Node(value);
     this.tail = this.head;
@@ -13,6 +14,7 @@ class LinkedList {
   }
   append(value) {
     let newNode = new Node(value);
+    newNode.prev = this.tail;
     this.tail.next = newNode;
     this.tail = newNode;
     this.length++;
@@ -73,17 +75,8 @@ class LinkedList {
     return array;
   }
 }
-const myLinkedList = new LinkedList(24);
-myLinkedList.append(42);
-myLinkedList.append(73);
-myLinkedList.prepend(84);
-myLinkedList.prepend(56);
-myLinkedList.insert(2, 45);
-console.log(JSON.stringify(myLinkedList, null, 2));
-console.log(myLinkedList.printList());
-myLinkedList.remove(6);
-myLinkedList.remove(0);
-myLinkedList.remove(0);
-console.log(JSON.stringify(myLinkedList, null, 2));
-console.log(myLinkedList.printList());
+const myDoublyLinkedList = new DoublyLinkedList(24);
+myDoublyLinkedList.append(42);
+console.log(JSON.stringify(myDoublyLinkedList));
+console.log(myDoublyLinkedList.printList());
 //# sourceMappingURL=index.js.map
