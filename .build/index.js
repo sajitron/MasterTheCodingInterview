@@ -3,7 +3,6 @@ class Node {
   constructor(value) {
     this.value = value;
     this.next = null;
-    this.prev = null;
   }
 }
 class DoublyLinkedList {
@@ -14,7 +13,6 @@ class DoublyLinkedList {
   }
   append(value) {
     let newNode = new Node(value);
-    newNode.prev = this.tail;
     this.tail.next = newNode;
     this.tail = newNode;
     this.length++;
@@ -33,9 +31,9 @@ class DoublyLinkedList {
     }
     const newNode = new Node(value);
     const leader = this.traverseToIndex(index - 1);
-    const holdingPointer = leader.next;
+    const follower = leader.next;
     leader.next = newNode;
-    newNode.next = holdingPointer;
+    newNode.next = follower;
     this.length++;
   }
   remove(index) {
@@ -52,8 +50,8 @@ class DoublyLinkedList {
       return;
     }
     const leader = this.traverseToIndex(index - 1);
-    const holdingPointer = this.traverseToIndex(index + 1);
-    leader.next = holdingPointer;
+    const follower = this.traverseToIndex(index + 1);
+    leader.next = follower;
     this.length--;
   }
   traverseToIndex(index) {
@@ -64,6 +62,20 @@ class DoublyLinkedList {
       counter++;
     }
     return currentNode;
+  }
+  reverse() {
+    const array = [];
+    let currentNode = this.head;
+    while (currentNode !== null) {
+      array.push(currentNode.value);
+      currentNode = currentNode.next;
+    }
+    const newList = new Node(array[0]);
+    for (let i = 1; i < array.length; i++) {
+      this.append(array[i]);
+    }
+    this.head = newList;
+    this.tail = new Node(array[array.length - 1]);
   }
   printList() {
     const array = [];
@@ -77,6 +89,17 @@ class DoublyLinkedList {
 }
 const myDoublyLinkedList = new DoublyLinkedList(24);
 myDoublyLinkedList.append(42);
-console.log(JSON.stringify(myDoublyLinkedList));
+myDoublyLinkedList.append(73);
+myDoublyLinkedList.prepend(84);
+myDoublyLinkedList.prepend(56);
+myDoublyLinkedList.insert(2, 45);
+console.log(JSON.stringify(myDoublyLinkedList, null, 2));
 console.log(myDoublyLinkedList.printList());
+myDoublyLinkedList.remove(6);
+myDoublyLinkedList.remove(0);
+myDoublyLinkedList.remove(0);
+console.log(JSON.stringify(myDoublyLinkedList, null, 2));
+console.log(myDoublyLinkedList.printList());
+myDoublyLinkedList.reverse();
+console.log(JSON.stringify(myDoublyLinkedList, null, 2));
 //# sourceMappingURL=index.js.map

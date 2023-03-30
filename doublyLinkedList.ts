@@ -79,6 +79,19 @@ class DoublyLinkedList {
     }
     return array;
   }
+  reverse() {
+    if (!this.head.next) {
+      return this.head;
+    }
+    let first = this.head;
+    let second = first.next;
+    while(second) {
+      const temp = second.next;
+      second.next = first;
+      first = second;
+      second = temp;
+    }
+  }
 }
 
 const myDoublyLinkedList = new DoublyLinkedList(24)
