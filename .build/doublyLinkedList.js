@@ -71,19 +71,25 @@ class DoublyLinkedList {
     return currentNode;
   }
   printList() {
-    const array2 = [];
-    let currentNode = this.head;
-    while (currentNode !== null) {
-      array2.push(currentNode.value);
-      currentNode = currentNode.next;
-    }
-    return array2;
-  }
-  reverse() {
+    const array = [];
     let currentNode = this.head;
     while (currentNode !== null) {
       array.push(currentNode.value);
       currentNode = currentNode.next;
+    }
+    return array;
+  }
+  reverse() {
+    if (!this.head.next) {
+      return this.head;
+    }
+    let first = this.head;
+    let second = first.next;
+    while (second) {
+      const temp = second.next;
+      second.next = first;
+      first = second;
+      second = temp;
     }
   }
 }
