@@ -74,4 +74,21 @@ function findItemRecursive(head, target) {
   return findItemRecursive(head.next, target);
 }
 
-console.log(findItem(w, 2))
+function getNodeValueRecursive(head, index) {
+  if (head === null) return null;
+  if (index === 0) return head.value;
+  return getNodeValueRecursive(head.next, index - 1);
+}
+
+function getNodeValue(head, index) {
+  let current = head;
+  let count = 0;
+  while (current !== null) {
+    if (count === index) return current.value;
+    count += 1;
+    current = current.next;
+  }
+  return null;
+}
+
+console.log(getNodeValue(a, 4))
