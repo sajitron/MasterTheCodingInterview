@@ -98,5 +98,12 @@ function reverseLinkedList(head) {
   }
   return prev;
 }
-console.log(reverseLinkedList(a));
+function reverseLinkedListRecursive(head, prev = null) {
+  if (head === null)
+    return prev;
+  const next = head.next;
+  head.next = prev;
+  return reverseLinkedListRecursive(next, head);
+}
+console.log(reverseLinkedListRecursive(a));
 //# sourceMappingURL=index.js.map

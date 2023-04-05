@@ -113,4 +113,4 @@ function reverseLinkedListRecursive(head, prev = null) {
   return reverseLinkedListRecursive(next, head);
 }
 
-console.log(reverseLinkedListRecursive(a))
+// todo: zipper lists
