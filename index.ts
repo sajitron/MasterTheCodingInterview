@@ -91,4 +91,26 @@ function getNodeValue(head, index) {
   return null;
 }
 
-console.log(getNodeValue(a, 4))
+function reverseLinkedList(head) {
+  let prev = null;
+  let current = head;
+  while(current !== null) {
+    // save the next reference
+    const next = current.next;
+    // set the head.next to null on first iteration
+    // since the head will now become the tail
+    current.next = prev;
+    prev = current;
+    current = next;
+  }
+  return prev;
+}
+
+function reverseLinkedListRecursive(head, prev = null) {
+  if (head === null) return prev;
+  const next = head.next;
+  head.next = prev;
+  return reverseLinkedListRecursive(next, head);
+}
+
+console.log(reverseLinkedList(a))

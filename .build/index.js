@@ -87,5 +87,16 @@ function getNodeValue(head, index) {
   }
   return null;
 }
-console.log(getNodeValue(a, 4));
+function reverseLinkedList(head) {
+  let prev = null;
+  let current = head;
+  while (current !== null) {
+    const next = current.next;
+    current.next = prev;
+    prev = current;
+    current = next;
+  }
+  return prev;
+}
+console.log(reverseLinkedList(a));
 //# sourceMappingURL=index.js.map
