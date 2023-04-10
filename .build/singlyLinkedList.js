@@ -1,95 +1,88 @@
 "use strict";
-class ListNode {
-  next;
-  value;
+class Node {
   constructor(value) {
     this.value = value;
     this.next = null;
   }
 }
-class SinglyLinkedList {
-  value;
-  head;
-  tail;
-  length;
+class LinkedList {
   constructor(value) {
-    this.head = new ListNode(value);
+    this.head = new Node(value);
     this.tail = this.head;
     this.length = 1;
   }
   append(value) {
-    let newNode = new ListNode(value);
+    let newNode = new Node(value);
     this.tail.next = newNode;
     this.tail = newNode;
     this.length++;
+    return this;
   }
   prepend(value) {
-    let newNode = new ListNode(value);
-    let head = this.head;
-    newNode.next = head;
-    this.head = newNode;
+    let newHead = new Node(value);
+    newHead.next = this.head;
+    this.head = newHead;
     this.length++;
+    return this;
+  }
+  insert(index, value) {
+    if (index >= this.length) {
+      return this.append(value);
+    }
+    const newNode = new Node(value);
+    const leader = this.traverseToIndex(index - 1);
+    const holdingPointer = leader.next;
+    leader.next = newNode;
+    newNode.next = holdingPointer;
+    this.length++;
+  }
+  remove(index) {
+    if (index === 0) {
+      this.head = this.head.next;
+      this.length++;
+      return;
+    }
+    if (index >= this.length) {
+      const newTail = this.traverseToIndex(this.length - 2);
+      newTail.next = null;
+      this.tail = newTail;
+      this.length--;
+      return;
+    }
+    const leader = this.traverseToIndex(index - 1);
+    const holdingPointer = this.traverseToIndex(index + 1);
+    leader.next = holdingPointer;
+    this.length--;
   }
   traverseToIndex(index) {
     let counter = 0;
-    let current = this.head;
-    while (counter !== index && current !== null) {
-      current = current.next;
+    let currentNode = this.head;
+    while (counter !== index) {
+      currentNode = currentNode.next;
       counter++;
     }
-    return current;
+    return currentNode;
   }
-  insert(value, index) {
-    let newNode = new ListNode(value);
-    let leadNode = this.traverseToIndex(index - 1);
-    if (leadNode) {
-      let followNode = leadNode.next;
-      leadNode.next = newNode;
-      newNode.next = followNode;
-      this.length++;
+  printList() {
+    const array = [];
+    let currentNode = this.head;
+    while (currentNode !== null) {
+      array.push(currentNode.value);
+      currentNode = currentNode.next;
     }
-  }
-  remove(index) {
-    if (index === 0 && this.head) {
-      this.head = this.head.next;
-      this.length--;
-      return this;
-    }
-    if (index >= this.length) {
-      const penultimateNode = this.traverseToIndex(this.length - 2);
-      if (penultimateNode) {
-        penultimateNode.next = null;
-        this.tail = penultimateNode;
-        this.length--;
-        return this;
-      }
-    }
-    let doomedNode = this.traverseToIndex(index);
-    let leadNode = this.traverseToIndex(index - 1);
-    if (leadNode && doomedNode) {
-      let followNode = doomedNode.next;
-      leadNode.next = followNode;
-      this.length--;
-    }
-  }
-  sum() {
-    let sum = 0;
-    let current = this.head;
-    while (current !== null) {
-      if (typeof current.value === "number") {
-        sum += current.value;
-        current = current.next;
-      }
-    }
-    console.log(sum);
+    return array;
   }
 }
-const linkedList = new SinglyLinkedList(23);
-linkedList.append(6);
-linkedList.prepend(10);
-linkedList.insert("hello", 1);
-linkedList.insert(35, 3);
-linkedList.remove(9);
-linkedList.sum();
-console.log(JSON.stringify(linkedList, null, 2));
+const myLinkedList = new LinkedList(24);
+myLinkedList.append(42);
+myLinkedList.append(73);
+myLinkedList.prepend(84);
+myLinkedList.prepend(56);
+myLinkedList.insert(2, 45);
+console.log(JSON.stringify(myLinkedList, null, 2));
+console.log(myLinkedList.printList());
+myLinkedList.remove(6);
+myLinkedList.remove(1);
+console.log(JSON.stringify(myLinkedList, null, 2));
+console.log(myLinkedList.printList());
 //# sourceMappingURL=singlyLinkedList.js.map
