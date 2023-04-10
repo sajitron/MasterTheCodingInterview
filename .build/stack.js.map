@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["../stack.ts"],
+  "sourcesContent": ["class Node {\n  constructor(value) {\n    this.value = value;\n    this.next = null;\n  }\n}\n\nclass Stack {\n  constructor() {\n    this.top = null;\n    this.bottom = null;\n    this.length = 0;\n  }\n\n  peek() {\n    return this.top;\n  }\n\n  push(value) {\n    const newNode = new Node(value);\n    if (this.length === 0) {\n      this.top = newNode;\n      this.bottom = newNode;\n    } else {\n      const holdingPointer = this.top;\n      this.top = newNode;\n      newNode.next = holdingPointer;\n    }\n    this.length++;\n    return this;\n  }\n\n  pop() {\n    if (!this.top) {\n      return null;\n    }\n    if (this.top === this.bottom) {\n      this.bottom = null;\n    }\n    this.top = this.top.next;\n    this.length--;\n    return this;\n  }\n}"],
+  "mappings": ";AAAA,MAAM,KAAK;AAAA,EACT,YAAY,OAAO;AACjB,SAAK,QAAQ;AACb,SAAK,OAAO;AAAA,EACd;AACF;AAEA,MAAM,MAAM;AAAA,EACV,cAAc;AACZ,SAAK,MAAM;AACX,SAAK,SAAS;AACd,SAAK,SAAS;AAAA,EAChB;AAAA,EAEA,OAAO;AACL,WAAO,KAAK;AAAA,EACd;AAAA,EAEA,KAAK,OAAO;AACV,UAAM,UAAU,IAAI,KAAK,KAAK;AAC9B,QAAI,KAAK,WAAW,GAAG;AACrB,WAAK,MAAM;AACX,WAAK,SAAS;AAAA,IAChB,OAAO;AACL,YAAM,iBAAiB,KAAK;AAC5B,WAAK,MAAM;AACX,cAAQ,OAAO;AAAA,IACjB;AACA,SAAK;AACL,WAAO;AAAA,EACT;AAAA,EAEA,MAAM;AACJ,QAAI,CAAC,KAAK,KAAK;AACb,aAAO;AAAA,IACT;AACA,QAAI,KAAK,QAAQ,KAAK,QAAQ;AAC5B,WAAK,SAAS;AAAA,IAChB;AACA,SAAK,MAAM,KAAK,IAAI;AACpB,SAAK;AACL,WAAO;AAAA,EACT;AACF;",
+  "names": []
+}
