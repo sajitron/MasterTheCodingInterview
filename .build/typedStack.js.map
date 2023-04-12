@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["../typedStack.ts"],
+  "sourcesContent": ["class StackNode {\n  value: number;\n  next: StackNode | null;\n  constructor(value: number) {\n    this.value = value;\n    this.next = null;\n  }\n}\n\nclass Stack {\n  top: StackNode | null;\n  bottom: StackNode | null;\n  length: number;\n\n  constructor() {\n    this.top = null;\n    this.bottom = null;\n    this.length = 0;\n  }\n\n  push(value: number) {\n    const newNode = new StackNode(value);\n    if (this.length === 0) {\n      this.top = newNode;\n      this.bottom = newNode\n    } else {\n      const currentTop = this.top;\n      this.top = newNode;\n      newNode.next = currentTop;\n    }\n    this.length++;\n    return this;\n  }\n\n  pop() {\n    if (this.top === this.bottom) {\n      return null;\n    }\n    this.top = this.top!.next;\n    this.length--;\n    return this;\n  }\n}"],
+  "mappings": ";AAAA,MAAM,UAAU;AAAA,EACd;AAAA,EACA;AAAA,EACA,YAAY,OAAe;AACzB,SAAK,QAAQ;AACb,SAAK,OAAO;AAAA,EACd;AACF;AAEA,MAAM,MAAM;AAAA,EACV;AAAA,EACA;AAAA,EACA;AAAA,EAEA,cAAc;AACZ,SAAK,MAAM;AACX,SAAK,SAAS;AACd,SAAK,SAAS;AAAA,EAChB;AAAA,EAEA,KAAK,OAAe;AAClB,UAAM,UAAU,IAAI,UAAU,KAAK;AACnC,QAAI,KAAK,WAAW,GAAG;AACrB,WAAK,MAAM;AACX,WAAK,SAAS;AAAA,IAChB,OAAO;AACL,YAAM,aAAa,KAAK;AACxB,WAAK,MAAM;AACX,cAAQ,OAAO;AAAA,IACjB;AACA,SAAK;AACL,WAAO;AAAA,EACT;AAAA,EAEA,MAAM;AACJ,QAAI,KAAK,QAAQ,KAAK,QAAQ;AAC5B,aAAO;AAAA,IACT;AACA,SAAK,MAAM,KAAK,IAAK;AACrB,SAAK;AACL,WAAO;AAAA,EACT;AACF;",
+  "names": []
+}

@@ -1,21 +1,23 @@
 "use strict";
-class Node {
+class QueueNode {
+  value;
+  next;
   constructor(value) {
     this.value = value;
     this.next = null;
   }
 }
 class Queue {
+  first;
+  last;
+  length;
   constructor() {
     this.first = null;
     this.last = null;
     this.length = 0;
   }
-  peek() {
-    return this.first;
-  }
   enqueue(value) {
-    const newNode = new Node(value);
+    const newNode = new QueueNode(value);
     if (this.length === 0) {
       this.first = newNode;
       this.last = newNode;
@@ -27,14 +29,12 @@ class Queue {
     return this;
   }
   dequeue() {
-    if (!this.first)
-      return null;
     if (this.first === this.last) {
-      this.last = null;
+      return null;
     }
     this.first = this.first.next;
     this.length--;
     return this;
   }
 }
-//# sourceMappingURL=queue.js.map
+//# sourceMappingURL=typedQueue.js.map

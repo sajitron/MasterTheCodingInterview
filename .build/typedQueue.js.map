@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["../typedQueue.ts"],
+  "sourcesContent": ["class QueueNode {\n  value: number;\n  next: QueueNode | null;\n  constructor(value: number) {\n    this.value = value;\n    this.next = null;\n  }\n}\n\nclass Queue {\n  first: QueueNode | null;\n  last: QueueNode | null;\n  length: number;\n\n  constructor() {\n    this.first = null;\n    this.last = null;\n    this.length = 0;\n  }\n\n  enqueue(value: number) {\n    const newNode = new QueueNode(value);\n    if (this.length === 0) {\n      this.first = newNode;\n      this.last = newNode\n    } else {\n      this.last!.next = newNode;\n      this.last = newNode;\n    }\n    this.length++;\n    return this;\n  }\n\n  dequeue() {\n    if (this.first === this.last) {\n      return null;\n    }\n    this.first = this.first!.next;\n    this.length--;\n    return this;\n  }\n}"],
+  "mappings": ";AAAA,MAAM,UAAU;AAAA,EACd;AAAA,EACA;AAAA,EACA,YAAY,OAAe;AACzB,SAAK,QAAQ;AACb,SAAK,OAAO;AAAA,EACd;AACF;AAEA,MAAM,MAAM;AAAA,EACV;AAAA,EACA;AAAA,EACA;AAAA,EAEA,cAAc;AACZ,SAAK,QAAQ;AACb,SAAK,OAAO;AACZ,SAAK,SAAS;AAAA,EAChB;AAAA,EAEA,QAAQ,OAAe;AACrB,UAAM,UAAU,IAAI,UAAU,KAAK;AACnC,QAAI,KAAK,WAAW,GAAG;AACrB,WAAK,QAAQ;AACb,WAAK,OAAO;AAAA,IACd,OAAO;AACL,WAAK,KAAM,OAAO;AAClB,WAAK,OAAO;AAAA,IACd;AACA,SAAK;AACL,WAAO;AAAA,EACT;AAAA,EAEA,UAAU;AACR,QAAI,KAAK,UAAU,KAAK,MAAM;AAC5B,aAAO;AAAA,IACT;AACA,SAAK,QAAQ,KAAK,MAAO;AACzB,SAAK;AACL,WAAO;AAAA,EACT;AACF;",
+  "names": []
+}
