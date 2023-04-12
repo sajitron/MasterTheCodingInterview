@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["../binarySearchTree.ts"],
+  "sourcesContent": ["class Node {\n  constructor(value) {\n    this.left = null;\n    this.right = null;\n    this.value = value;\n  }\n}\n\nclass BinarySearchTree {\n  constructor() {\n    this.root = null;\n  }\n\n  insert(value) {\n    const newNode = new Node(value);\n    if (this.root === null) {\n      this.root = newNode;\n      return this;\n    }\n  }\n}\n\nconst bst = new BinarySearchTree();\nbst.insert(84);"],
+  "mappings": ";AAAA,MAAM,KAAK;AAAA,EACT,YAAY,OAAO;AACjB,SAAK,OAAO;AACZ,SAAK,QAAQ;AACb,SAAK,QAAQ;AAAA,EACf;AACF;AAEA,MAAM,iBAAiB;AAAA,EACrB,cAAc;AACZ,SAAK,OAAO;AAAA,EACd;AAAA,EAEA,OAAO,OAAO;AACZ,UAAM,UAAU,IAAI,KAAK,KAAK;AAC9B,QAAI,KAAK,SAAS,MAAM;AACtB,WAAK,OAAO;AACZ,aAAO;AAAA,IACT;AAAA,EACF;AACF;AAEA,MAAM,MAAM,IAAI,iBAAiB;AACjC,IAAI,OAAO,EAAE;",
+  "names": []
+}
