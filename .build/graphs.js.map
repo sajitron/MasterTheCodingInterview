@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["../graphs.ts"],
+  "sourcesContent": ["class Graph {\n  constructor() {\n    this.numberOfNodes = 0;\n    this.adjacentList = {\n      \n    }\n  }\n\n  addVertex(node) {\n    this.adjacentList[node] = [];\n    this.numberOfNodes++;\n  }\n\n  addEdge(node1, node2) {\n    // undirected graph\n    this.adjacentList[node1].push(node2);\n    this.adjacentList[node2].push(node1);\n  }\n}"],
+  "mappings": ";AAAA,MAAM,MAAM;AAAA,EACV,cAAc;AACZ,SAAK,gBAAgB;AACrB,SAAK,eAAe,CAEpB;AAAA,EACF;AAAA,EAEA,UAAU,MAAM;AACd,SAAK,aAAa,QAAQ,CAAC;AAC3B,SAAK;AAAA,EACP;AAAA,EAEA,QAAQ,OAAO,OAAO;AAEpB,SAAK,aAAa,OAAO,KAAK,KAAK;AACnC,SAAK,aAAa,OAAO,KAAK,KAAK;AAAA,EACrC;AACF;",
+  "names": []
+}

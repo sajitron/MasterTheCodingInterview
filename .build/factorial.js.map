@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["../factorial.ts"],
+  "sourcesContent": ["function factorialRecursive(n) {\n  if (n === 1) return 1;\n  return n * factorial(n - 1);\n}\n\n\nfunction factorialIterative(n) {\n  let answer = 1;\n  if (n === 1) return 1;\n  for (let i = 1; i <= n; i++) {\n    answer *= i\n  }\n\n  return answer;\n}\n"],
+  "mappings": ";AAAA,SAAS,mBAAmB,GAAG;AAC7B,MAAI,MAAM;AAAG,WAAO;AACpB,SAAO,IAAI,UAAU,IAAI,CAAC;AAC5B;AAGA,SAAS,mBAAmB,GAAG;AAC7B,MAAI,SAAS;AACb,MAAI,MAAM;AAAG,WAAO;AACpB,WAAS,IAAI,GAAG,KAAK,GAAG,KAAK;AAC3B,cAAU;AAAA,EACZ;AAEA,SAAO;AACT;",
+  "names": []
+}

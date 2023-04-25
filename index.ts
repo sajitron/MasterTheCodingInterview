@@ -1,52 +1,16 @@
-class Node {
-  constructor(value) {
-    this.value = value;
-    this.next = null;
+function fibonacciRecursive(n) {
+  if (n < 2) {
+    return n;
   }
+  return fibonacciRecursive(n-1) + fibonacciRecursive(n-2);
 }
 
-class Queue {
-  constructor() {
-    this.first = null;
-    this.last = null;
-    this.length = 0;
+function fibonacciIterative(n) {
+  let arr = [0, 1];
+  for (let i = 2; i < n + 1; i++) {
+    arr.push(arr[i-2] + arr[i-1]);
   }
-
-  peek() {
-    return this.first;
-  }
-
-  enqueue(value) {
-    const newNode = new Node(value);
-    if (this.length === 0) {
-      this.first = newNode;
-      this.last = newNode;
-    } else {
-      this.last.next = newNode
-      this.last = newNode;
-    }
-    this.length++;
-    return this;
-  }
-
-  dequeue() {
-    if (!this.first) return null;
-    if (this.first === this.last) {
-      this.last = null;
-    }
-    this.first = this.first.next;
-    this.length--;
-    return this;
-  }
+  return arr[n];
 }
 
-const newQueue = new Queue();
-newQueue.enqueue(46);
-newQueue.enqueue(96);
-newQueue.enqueue(33);
-
-console.log(JSON.stringify(newQueue, null, 2))
-
-newQueue.dequeue();
-
-console.log(JSON.stringify(newQueue, null, 2))
+console.log(fibonacciIterative(8))
