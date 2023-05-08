@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["../insertionSort.ts"],
+  "sourcesContent": ["const numbers = [99, 44, 6, 2, 1, 5, 63, 87, 283, 4, 0];\n\nfunction insertionSort(array: number[]) {\n  let length = array.length;\n  for (let i = 0; i < length; i++) {\n    if (array[i] < array[0]) {\n      // move number to the first position\n      array.unshift(array.splice(i,1)[0]);\n    } else {\n      // find where the number should go\n      for (let j = 1; j < 1; j++) {\n        if (array[i] > array[j-1] && array[i] < array[j]) {\n          // move the number to the right spot\n          array.splice(j,0,array.splice(i,1)[0])\n        }\n      }\n    }\n  }\n}\n"],
+  "mappings": ";AAAA,MAAM,UAAU,CAAC,IAAI,IAAI,GAAG,GAAG,GAAG,GAAG,IAAI,IAAI,KAAK,GAAG,CAAC;AAEtD,SAAS,cAAc,OAAiB;AACtC,MAAI,SAAS,MAAM;AACnB,WAAS,IAAI,GAAG,IAAI,QAAQ,KAAK;AAC/B,QAAI,MAAM,KAAK,MAAM,IAAI;AAEvB,YAAM,QAAQ,MAAM,OAAO,GAAE,CAAC,EAAE,EAAE;AAAA,IACpC,OAAO;AAEL,eAAS,IAAI,GAAG,IAAI,GAAG,KAAK;AAC1B,YAAI,MAAM,KAAK,MAAM,IAAE,MAAM,MAAM,KAAK,MAAM,IAAI;AAEhD,gBAAM,OAAO,GAAE,GAAE,MAAM,OAAO,GAAE,CAAC,EAAE,EAAE;AAAA,QACvC;AAAA,MACF;AAAA,IACF;AAAA,EACF;AACF;",
+  "names": []
+}

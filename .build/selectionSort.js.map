@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["../selectionSort.ts"],
+  "sourcesContent": ["const numbers = [99, 44, 6, 2, 1, 5, 63, 87, 283, 4, 0];\n\nfunction selectionSort(array: number[]) {\n  let length = array.length;\n  for (let i = 0; i < length; i++) {\n    // set current index as minimum\n    let min = i;\n    let temp = array[i];\n    for (let j = i+1; j < length; j++) {\n      if (array[j] < array[min]) {\n        // update minimum if current is lower\n        // than what we had previously\n        min = j;\n      }\n    }\n    array[i] = array[min]\n    array[min] = temp;\n  }\n  return array;\n}"],
+  "mappings": ";AAAA,MAAM,UAAU,CAAC,IAAI,IAAI,GAAG,GAAG,GAAG,GAAG,IAAI,IAAI,KAAK,GAAG,CAAC;AAEtD,SAAS,cAAc,OAAiB;AACtC,MAAI,SAAS,MAAM;AACnB,WAAS,IAAI,GAAG,IAAI,QAAQ,KAAK;AAE/B,QAAI,MAAM;AACV,QAAI,OAAO,MAAM;AACjB,aAAS,IAAI,IAAE,GAAG,IAAI,QAAQ,KAAK;AACjC,UAAI,MAAM,KAAK,MAAM,MAAM;AAGzB,cAAM;AAAA,MACR;AAAA,IACF;AACA,UAAM,KAAK,MAAM;AACjB,UAAM,OAAO;AAAA,EACf;AACA,SAAO;AACT;",
+  "names": []
+}

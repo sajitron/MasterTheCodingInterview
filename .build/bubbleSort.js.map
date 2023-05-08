@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["../bubbleSort.ts"],
+  "sourcesContent": ["const numbers = [99, 44, 6, 2, 1, 5, 63, 87, 283, 4, 0];\n\nfunction bubbleSort(array: number[]) {\n  let length = array.length;\n  for (let i = 0; i < length; i++) {\n    for (let j = 0; j < length; j++) {\n      if (array[j] > array[j+1]) {\n        let temp = array[j];\n        array[j] = array[j+1];\n        array[j+1] = temp;\n      }\n    }\n  }\n}"],
+  "mappings": ";AAAA,MAAM,UAAU,CAAC,IAAI,IAAI,GAAG,GAAG,GAAG,GAAG,IAAI,IAAI,KAAK,GAAG,CAAC;AAEtD,SAAS,WAAW,OAAiB;AACnC,MAAI,SAAS,MAAM;AACnB,WAAS,IAAI,GAAG,IAAI,QAAQ,KAAK;AAC/B,aAAS,IAAI,GAAG,IAAI,QAAQ,KAAK;AAC/B,UAAI,MAAM,KAAK,MAAM,IAAE,IAAI;AACzB,YAAI,OAAO,MAAM;AACjB,cAAM,KAAK,MAAM,IAAE;AACnB,cAAM,IAAE,KAAK;AAAA,MACf;AAAA,IACF;AAAA,EACF;AACF;",
+  "names": []
+}
